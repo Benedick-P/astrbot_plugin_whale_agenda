@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "settings": {
+    "semester_start": "2026-09-07",
+    "sleep_start": "2026-09-07",
+    "lightout_at": "23:30",
+    "timezone": "Asia/Shanghai"
+  },
+  "courses": [
+    {
+      "day": 0,
+      "start": "08:00",
+      "span": "08:00-09:40",
+      "name": "高等数学",
+      "room": "教三 201",
+      "weeks": [
+        [
+          1,
+          16
+        ]
+      ]
+    },
+    {
+      "day": 2,
+      "start": "10:00",
+      "span": "10:00-11:40",
+      "name": "大学英语",
+      "room": "外语楼 305",
+      "weeks": [
+        [
+          1,
+          8
+        ],
+        [
+          10,
+          16
+        ]
+      ]
+    },
+    {
+      "day": 4,
+      "start": "14:00",
+      "span": "14:00-15:40",
+      "name": "数据结构",
+      "room": "计算机楼 402",
+      "weeks": [
+        [
+          1,
+          16
+        ]
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "day": 1,
+      "start": "19:00",
+      "span": "19:00-20:40",
+      "label": "英语",
+      "reason": "背单词 + 跟读"
+    },
+    {
+      "day": 3,
+      "start": "14:00",
+      "span": "14:00-15:40",
+      "label": "项目时间",
+      "reason": "只做一件事，做完再走"
+    },
+    {
+      "day": 6,
+      "start": "17:00",
+      "span": "17:00-18:30",
+      "label": "周复盘",
+      "reason": "这周做成了什么"
+    }
+  ],
+  "meals": [
+    {
+      "at": "07:15",
+      "label": "早饭",
+      "hint": "起晚了就用备好的面包+牛奶+鸡蛋顶，别为此推迟熄灯"
+    },
+    {
+      "at": "11:35",
+      "label": "午饭",
+      "hint": "趁人少先去，避开 12:00 高峰"
+    },
+    {
+      "at": "17:35",
+      "label": "晚饭",
+      "hint": "吃完散步十分钟再回自习"
+    }
+  ],
+  "sleep_plan": [
+    {
+      "from_week": 1,
+      "to_week": 1,
+      "bedtime": "01:50",
+      "wake_class": "07:20",
+      "wake_late": "07:50",
+      "nap": 45
+    },
+    {
+      "from_week": 2,
+      "to_week": 2,
+      "bedtime": "01:35",
+      "wake_class": "07:20",
+      "wake_late": "07:50",
+      "nap": 45
+    },
+    {
+      "from_week": 3,
+      "to_week": 3,
+      "bedtime": "01:20",
+      "wake_class": "07:20",
+      "wake_late": "07:50",
+      "nap": 45
+    },
+    {
+      "from_week": 4,
+      "to_week": 4,
+      "bedtime": "01:05",
+      "wake_class": "07:20",
+      "wake_late": "07:50",
+      "nap": 45
+    },
+    {
+      "from_week": 5,
+      "to_week": 5,
+      "bedtime": "00:50",
+      "wake_class": "07:15",
+      "wake_late": "07:40",
+      "nap": 35
+    },
+    {
+      "from_week": 6,
+      "to_week": 6,
+      "bedtime": "00:35",
+      "wake_class": "07:15",
+      "wake_late": "07:40",
+      "nap": 35
+    },
+    {
+      "from_week": 7,
+      "to_week": 7,
+      "bedtime": "00:20",
+      "wake_class": "07:15",
+      "wake_late": "07:40",
+      "nap": 35
+    },
+    {
+      "from_week": 8,
+      "to_week": 8,
+      "bedtime": "00:05",
+      "wake_class": "07:15",
+      "wake_late": "07:30",
+      "nap": 30
+    },
+    {
+      "from_week": 9,
+      "to_week": 99,
+      "bedtime": "00:00",
+      "wake_class": "07:15",
+      "wake_late": "07:30",
+      "nap": 25
+    }
+  ]
+}

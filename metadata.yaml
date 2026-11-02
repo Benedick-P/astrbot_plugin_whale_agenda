@@ -1,0 +1,9 @@
+name: astrbot_plugin_whale_agenda
+display_name: 小鲸鱼日程提醒
+author: local
+version: 3.1.0
+desc: 小鲸鱼一体包：定时提醒（早间简报、课前、学习块、三餐、熄灯、周复盘）+ 主人身份注入与回复压行 + 三个日程查询 LLM 工具；课表存 JSON，可在 WebUI 插件页面编辑并绑定主人 QQ。
+repo: ""
+astrbot_version: ">=4.24.0"
+support_platforms:
+  - aiocqhttp

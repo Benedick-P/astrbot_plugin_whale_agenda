@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小鲸鱼日程</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="title">
+        <h1>小鲸鱼日程</h1>
+        <p id="meta" class="meta">加载中…</p>
+      </div>
+      <div class="actions">
+        <span id="status" class="status"></span>
+        <button id="reload" class="ghost" type="button">重新读取</button>
+      </div>
+    </header>
+
+    <nav class="tabs" id="tabs">
+      <button type="button" data-tab="courses" class="active">课表</button>
+      <button type="button" data-tab="blocks">自习块</button>
+      <button type="button" data-tab="meals">三餐</button>
+      <button type="button" data-tab="sleep">作息</button>
+      <button type="button" data-tab="settings">设置</button>
+    </nav>
+
+    <main>
+      <section id="tab-courses">
+        <div id="board" class="board"></div>
+      </section>
+
+      <section id="tab-blocks" hidden>
+        <div class="list-head">
+          <span>自习块按周几与开始时间排序</span>
+          <button type="button" class="primary" data-add="block">新增自习块</button>
+        </div>
+        <div id="blockList" class="rows"></div>
+      </section>
+
+      <section id="tab-meals" hidden>
+        <div class="list-head">
+          <span>三餐时间与提示</span>
+          <button type="button" class="primary" data-add="meal">新增一餐</button>
+        </div>
+        <div id="mealList" class="rows"></div>
+      </section>
+
+      <section id="tab-sleep" hidden>
+        <div class="list-head">
+          <span>作息阶段：按“作息调整周次”生效，与学期周次无关</span>
+          <button type="button" class="primary" data-add="sleep">新增阶段</button>
+        </div>
+        <div id="sleepList" class="rows"></div>
+      </section>
+
+      <section id="tab-settings" hidden>
+        <div class="form-grid">
+          <label class="wide">主人 QQ（绑定后：提醒只发这个号，日程工具也只对它开放）
+            <input id="ownerQq" type="text" inputmode="numeric" placeholder="例如 3417253873" />
+          </label>
+          <label>第 1 周周一
+            <input id="semesterStart" type="date" />
+          </label>
+          <label>作息调整第 1 周周一
+            <input id="sleepStart" type="date" />
+          </label>
+          <label>熄灯时间
+            <input id="lightoutAt" type="time" />
+          </label>
+          <label>时区
+            <input id="timezone" type="text" />
+          </label>
+        </div>
+        <p class="hint">
+          改完会自动保存。作息表的周次是“调整周次”，比如调整第 1 周可以对应学期第 9 周。
+        </p>
+      </section>
+    </main>
+
+    <dialog id="editor">
+      <form method="dialog" id="editorForm">
+        <h2 id="editorTitle">编辑</h2>
+        <div class="form-grid">
+          <label>类型
+            <select id="fKind">
+              <option value="course">课程</option>
+              <option value="block">自习块</option>
+            </select>
+          </label>
+          <label>星期
+            <select id="fDay">
+              <option value="0">周一</option>
+              <option value="1">周二</option>
+              <option value="2">周三</option>
+              <option value="3">周四</option>
+              <option value="4">周五</option>
+              <option value="5">周六</option>
+              <option value="6">周日</option>
+            </select>
+          </label>
+          <label>开始时间
+            <input id="fStart" type="time" required />
+          </label>
+          <label>显示时段
+            <input id="fSpan" type="text" placeholder="08:00-09:40，留空自动填开始时间" />
+          </label>
+          <label class="wide">名称
+            <input id="fName" type="text" required placeholder="Linux 网络管理 / 英语①" />
+          </label>
+          <label class="wide">地点或做法说明
+            <input id="fExtra" type="text" placeholder="新工科 4403 / 课程 1 课时 + 跟读" />
+          </label>
+          <label class="wide">周次
+            <input id="fWeeks" type="text" placeholder="1-16 或 1-8,10-16；自习块可填不提醒的周次" />
+          </label>
+        </div>
+        <footer class="dialog-actions">
+          <button type="button" id="fDelete" class="danger">删除</button>
+          <span class="spacer"></span>
+          <button type="button" id="fCancel" class="ghost">取消</button>
+          <button type="button" id="fSave" class="primary">保存</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

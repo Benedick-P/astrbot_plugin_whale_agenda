@@ -1,0 +1,104 @@
+{
+  "owner_qq": {
+    "description": "主人 QQ 号（必填）",
+    "type": "string",
+    "default": "",
+    "hint": "提醒只发给这个号，并且只走私聊。留空则插件不会发任何提醒。"
+  },
+  "platform_id": {
+    "description": "平台实例 ID",
+    "type": "string",
+    "default": "aiocqhttp",
+    "hint": "AstrBot 机器人配置里那个平台的 id。私聊会话 ID 格式是 {platform_id}:FriendMessage:{QQ}。"
+  },
+  "timezone": {
+    "description": "时区",
+    "type": "string",
+    "default": "Asia/Shanghai",
+    "hint": "schedule.json 里没写时区时用这个。"
+  },
+  "persona_voice": {
+    "description": "用当前人格生成文案",
+    "type": "bool",
+    "default": true,
+    "hint": "关掉就是固定模板文案。模型调用失败或超时会自动退回模板，提醒不会丢。"
+  },
+  "notify_on_start": {
+    "description": "插件启动时发一条上线通知",
+    "type": "bool",
+    "default": true
+  },
+  "enable_briefing": {
+    "description": "每日 07:15 早间简报",
+    "type": "bool",
+    "default": true
+  },
+  "enable_class": {
+    "description": "课前 30 分钟提醒（带教室）",
+    "type": "bool",
+    "default": true,
+    "hint": "08:30 之前的早课不单独提醒，已经包含在早间简报里。"
+  },
+  "enable_study": {
+    "description": "学习块开始提醒",
+    "type": "bool",
+    "default": true
+  },
+  "enable_meal": {
+    "description": "午饭 / 晚饭提醒",
+    "type": "bool",
+    "default": true
+  },
+  "enable_lightout": {
+    "description": "熄灯提醒",
+    "type": "bool",
+    "default": true,
+    "hint": "时间取 schedule.json 的 settings.lightout_at，会带上当周目标入睡时间。"
+  },
+  "enable_review": {
+    "description": "周日 17:00 复盘提醒",
+    "type": "bool",
+    "default": true
+  },
+  "api_enable": {
+    "description": "启用日程修改 API",
+    "type": "bool",
+    "default": true,
+    "hint": "只监听 127.0.0.1，所有请求要带 token。关掉后只能改 JSON 文件。"
+  },
+  "api_host": {
+    "description": "API 监听地址",
+    "type": "string",
+    "default": "127.0.0.1",
+    "hint": "别改成 0.0.0.0 除非你清楚后果——那等于把改课表的入口暴露到公网。"
+  },
+  "api_port": {
+    "description": "API 端口",
+    "type": "int",
+    "default": 6190
+  },
+  "api_token": {
+    "description": "API token（留空自动生成）",
+    "type": "string",
+    "default": "",
+    "hint": "留空时首次启动生成随机 token，存到 plugin_data 的 api_token.txt。"
+  },
+  "enable_owner_guard": {
+    "description": "注入当前发言人身份（主人识别）",
+    "type": "bool",
+    "default": true,
+    "hint": "把发言人 QQ 与昵称写进 system prompt，人格卡的主人文案才生效。关掉后模型分不清谁在说话。"
+  },
+  "flatten_replies": {
+    "description": "把多段回复压成一行",
+    "type": "bool",
+    "default": true,
+    "hint": "QQ 聊天里分段会很散，压行时把换行换成标点。"
+  },
+  "safety_guard": {
+    "description": "防撞车：身份注入去重 + 工具名冲突检查",
+    "type": "bool",
+    "default": true,
+    "hint": "检测到其他模块也注入主人身份时只告警不覆盖；重复调用只替换自己的段落，不会叠加。"
+  }
+}
